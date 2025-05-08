@@ -44,6 +44,11 @@ with st.form("tiktok_form"):
         "生成AI動画（外部ツールで作った高精度映像）",
         "その他"
     ])
+    promo_type = st.selectbox("投稿種別", [
+        "PR投稿（案件）",
+        "オーガニック投稿",
+        "不明・判別不能"
+    ])
     scene = st.text_input("撮影シーン・場所（例：自宅 / 店舗内 / 屋外 / スタジオ など）")
     origin_type = st.radio("動画の種類", ["オリジナル", "リポスト"])
     url = st.text_input("TikTok動画URL")
@@ -66,6 +71,7 @@ if submitted:
             "投稿日": {"date": {"start": str(post_date)}},
             "投稿者タイプ": {"select": {"name": post_type}},
             "投稿フォーマット": {"select": {"name": format_type}},
+            "投稿種別": {"select": {"name": promo_type}},
             "撮影シーン・場所": {"rich_text": [{"text": {"content": scene}}]},
             "動画の種類": {"select": {"name": origin_type}},
             "動画URL": {"url": url},
