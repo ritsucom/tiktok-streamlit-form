@@ -45,8 +45,8 @@ with st.form("tiktok_form"):
         "その他"
     ])
     promo_type = st.selectbox("投稿種別", [
+         "オーガニック投稿",
         "PR投稿（案件）",
-        "オーガニック投稿",
         "不明・判別不能"
     ])
     scene = st.text_input("撮影シーン・場所（例：自宅 / 店舗内 / 屋外 / スタジオ など）")
